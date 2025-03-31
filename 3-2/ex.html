@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Home</title>
+   <link rel="shortcut icon" href="Black-and-Orange-Minimalist-Home-Furnishings-Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="slider">
+        <img src="commercialCover.c5df3aef.jpg" class="active" alt="Image 1">
+        <img src="pgCover.d07e5816.jpg" alt="Image 2">
+        <img src="plotsCover.effff013.jpg" alt="Image 3">
+        <img src="rentCover.c47ae7d7.jpg" alt="Image 4">
+    </div>
+    <div class="navbar">
+        <a href="#">
+            <img src="Black-and-Orange-Minimalist-Home-Furnishings-Logo.png" alt="Logo">
+        </a>
+        <div class="nav-links">
+            
+            <a href="about.html">About</a>
+            <a href="properties.html">Properties</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="search-container">
+            <div class="tabs">
+                <a href="buy.html" class="touch">BUY</a>
+                <a href="rent.html" class="touch">RENT</a>
+                <a href="plots.html" class="touch">PLOTS</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for locality, landmark.">
+                <button>Search</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".slider img");
+    let currentIndex = 0;
+
+    function changeImage() {
+        images[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add("active");
+    }
+
+    setInterval(changeImage, 2000); // Changes image every 2 seconds
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all tabs
+    const tabs = document.querySelectorAll(".tabs div");
+    tabs.forEach(tab => {
+        tab.addEventListener("click", function () {
+            // Remove 'active' class from all tabs
+            tabs.forEach(t => t.classList.remove("active"));
+            // Add 'active' class to clicked tab
+            this.classList.add("active");
+        });
+    });
+
+    // Search button functionality
+    document.querySelector(".search-bar button").addEventListener("click", function () {
+        const searchQuery = document.querySelector(".search-bar input").value.trim().toLowerCase();
+        
+        if (searchQuery === "bhimavaram") {
+            window.location.href = "properties.html"; // Redirect to buy.html
+        } else {
+            alert("Searching for: " + searchQuery); // Display search query
+        }
+    });
+});
+
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section company">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section partner-sites">
+                <h3>Partner Sites</h3>
+                <ul>
+                    <li><a href="https://www.proptiger.com/">Proptiger</a></li>
+                    <li><a href="https://www.realtor.com/">Realtor</a></li>
+                </ul>
+            </div>
+            <div class="footer-section explore">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="progress.html">News</a></li>
+                    <li><a href="progress.html">Home Loans</a></li>
+                    <li><a href="progress.html">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="https://wa.me/yourwhatsappnumber" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="tel:yourphonenumber"><i class="fas fa-phone"></i> Phone</a></li>
+                    <li><a href="https://www.instagram.com/yourhandle" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://youtube.com/yourhandle" target="_blank"><i class="fab fa-youtube"></i> yout tube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
