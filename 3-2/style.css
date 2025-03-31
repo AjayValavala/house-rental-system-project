@@ -12,15 +12,16 @@ body {
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
-    padding: 7px 10px;
-    background-color: rgba(0, 0, 0, 0.514);
-    position: relative;
-    z-index: 2; /* Ensures navbar stays on top */
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar img {
     height: 40px;
-    margin-right: 20px;
 }
 
 .navbar .nav-links {
@@ -32,18 +33,31 @@ body {
     color: whitesmoke;
     text-decoration: none;
     padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar a:hover {
     background-color: #e0d9118b;
-    text-decoration: underline;
     border-radius: 5px;
-    color: rgb(7, 7, 7);
+    color: black;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }
 
 /* Content Section */
 .content {
-    padding: 40px 20px;
+    padding: 80px 20px 40px;
     text-align: center;
 }
 
@@ -58,6 +72,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding: 20px;
 }
 
 .property-card {
@@ -65,7 +80,8 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 100%;
+    max-width: 350px;
     text-align: center;
     transition: transform 0.3s;
 }
@@ -80,13 +96,6 @@ body {
     transform: translateY(-10px);
 }
 
-.property-link {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Keep text color same as default */
-    display: block; /* Ensure it takes full width */
-}
-
-
 .property-info {
     padding: 20px;
 }
@@ -94,13 +103,11 @@ body {
 .property-info h3 {
     font-size: 24px;
     color: #333;
-    margin-bottom: 10px;
 }
 
 .property-info p {
     font-size: 18px;
     color: #555;
-    margin-bottom: 20px;
 }
 
 .property-info .btn {
@@ -109,21 +116,53 @@ body {
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
+    display: inline-block;
+    transition: transform 0.3s;
 }
 
 .property-info .btn:hover {
     background-color: #218c6f;
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .property-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .property-card {
+        width: 90%;
+    }
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+    opacity: 1;
 }
 
 /* Footer */
 footer {
     background-color: #111;
-    color: #fff;
+    color: white;
     padding: 40px 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
+    text-align: center;
     margin-top: 40px;
 }
 
@@ -162,62 +201,7 @@ footer {
 }
 
 .footer-section ul li a:hover {
-    color: #fff;
-}
-
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
-    .navbar .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .property-list {
-        flex-direction: column;
-        align-items: center;
-    }
-    .property-card {
-        width: 90%; /* Make it more responsive */
-    }
-}
-
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    z-index: -1; /* Moves behind content */
-    overflow: hidden;
-}
-
-.slider img {
-    position: absolute;
-    width: 100%; /* Full window width */
-    height: 65%; /* Full viewport height */
-    object-fit: cover; /* Ensures image covers without distortion */
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slider img.active {
-    opacity: 1;
-}
-
-.navbar a, .property-info .btn {
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.property-info .btn:hover {
-    transform: scale(1.05); /* Slightly enlarge button on hover */
+    color: white;
 }
 
 @media (max-width: 768px) {
