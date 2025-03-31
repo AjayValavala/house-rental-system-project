@@ -9,6 +9,13 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+
+.navbar, .slider, footer {
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  
+
 /* Background Image Slider */
 .slider {
     position: absolute;
@@ -156,7 +163,7 @@ body, html {
 footer {
     background-color: #111;
     color: #fff;
-    padding: 40px 20px;
+    padding: 30px 5px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -259,3 +266,4 @@ footer {
 .contact-item a:hover, .about-item a:hover {
     text-decoration: underline;
 }
+
