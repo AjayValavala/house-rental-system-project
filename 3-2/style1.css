@@ -6,6 +6,7 @@ body, html {
     height: 100%;
     display: flex;
     flex-direction: column;
+    font-family: Arial, sans-serif;
 }
 
 /* Background Image Slider */
@@ -13,17 +14,17 @@ body, html {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    z-index: -1; /* Moves behind content */
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
     overflow: hidden;
 }
 
 .slider img {
     position: absolute;
-    width: 100%; /* Full window width */
-    height: 65%; /* Full viewport height */
-    object-fit: cover; /* Ensures image covers without distortion */
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -32,20 +33,22 @@ body, html {
     opacity: 1;
 }
 
-.touch{
+.touch {
     text-align: left;
 }
+
 /* Navigation Bar */
 .navbar {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: flex;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
-    padding: 7px 10px;
-    background-color: rgba(0, 0, 0, 0.514);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
     position: relative;
-    z-index: 2; /* Ensures navbar stays on top */
+    z-index: 2;
+    flex-wrap: wrap;
 }
 
 .navbar img {
@@ -56,12 +59,14 @@ body, html {
 .navbar .nav-links {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .navbar a {
     color: whitesmoke;
     text-decoration: none;
     padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar a:hover {
@@ -78,21 +83,19 @@ body, html {
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 60vh; /* Adjust height for content section */
-    position: center;
-    z-index: 1; /* Ensures it's above background */
-    padding-bottom: 100px; /* Add space below content to avoid footer overlap */
+    min-height: 60vh;
+    padding-bottom: 100px;
 }
 
 /* Search Container */
 .search-container {
-    background-color: rgba(20, 15, 38, 0.8); /* Semi-transparent */
+    background-color: rgba(20, 15, 38, 0.8);
     border-radius: 12px;
     padding: 20px;
     width: 600px;
     max-width: 90%;
     color: #fff;
-    text-align:left;
+    text-align: left;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -102,23 +105,24 @@ body, html {
     gap: 25px;
     padding: 15px 0;
     justify-content: left;
+    flex-wrap: wrap;
 }
 
 .tabs a {
-    text-decoration: none; /* Remove default underline */
+    text-decoration: none;
     color: #fff;
     cursor: pointer;
     padding-bottom: 5px;
     border-bottom: 3px solid transparent;
+    transition: color 0.3s;
 }
 
 .tabs a.active {
     border-bottom: 3px solid #fff;
 }
 
-/* Optional: Add hover effect for better user experience */
 .tabs a:hover {
-    color: #28c59c; /* Or any other color you prefer */
+    color: #28c59c;
 }
 
 /* Search Bar */
@@ -127,6 +131,7 @@ body, html {
     background-color: #fff;
     border-radius: 30px;
     padding: 5px;
+    flex-wrap: wrap;
 }
 
 .search-bar input {
@@ -158,21 +163,19 @@ footer {
     margin-top: auto;
 }
 
-/* Footer Content */
 .footer-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 100%;
-    height: fit-content;
     max-width: 1200px;
-    margin: 5px 5px;
+    margin: auto;
 }
 
 .footer-section {
     flex: 1;
     min-width: 200px;
     margin: 10px;
+    text-align: center;
 }
 
 .footer-section h3 {
@@ -206,101 +209,52 @@ footer {
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
-        text-align: center;
     }
 
     .search-container {
-        width: 90%;
+        width: 95%;
     }
 }
 
-/* Contact Us Section */
-.contact-us {
-    background-color: #f9f9f9; /* Light background for the contact section */
+/* Contact & About Sections */
+.contact-us, .about-us {
+    background-color: #f9f9f9;
     padding: 40px 20px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
-    max-width: 600px; /* Limiting the width for better readability */
-    margin: 40px auto; /* Centering the contact box */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
 }
 
-.contact-us h2 {
+.contact-us h2, .about-us h2 {
     font-size: 28px;
     color: #333;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
-.contact-us p {
+.contact-us p, .about-us p {
     font-size: 16px;
     color: #777;
     margin-bottom: 20px;
 }
 
-.contact-info {
+.contact-info, .about-info {
     text-align: left;
     font-size: 16px;
     color: #555;
 }
 
-.contact-item {
-    margin-bottom: 15px; /* Space between each contact item */
+.contact-item, .about-item {
+    margin-bottom: 15px;
 }
 
-.contact-item a {
-    color: #28c59c; /* Color for links */
+.contact-item a, .about-item a {
+    color: #28c59c;
     text-decoration: none;
 }
 
-.contact-item a:hover {
+.contact-item a:hover, .about-item a:hover {
     text-decoration: underline;
-}
-
-.contact-item strong {
-    font-weight: bold;
-    color: #333; /* Making the label bold for emphasis */
-}
-
-/* About Us Section */
-.about-us {
-    background-color: #f9f9f9; /* Light background for the about section */
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
-    max-width: 600px; /* Limiting the width for better readability */
-    margin: 40px auto; /* Centering the about box */
-}
-
-.about-us h2 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.about-us p {
-    font-size: 16px;
-    color: #777;
-    margin-bottom: 20px;
-}
-
-.about-info {
-    text-align: left;
-    font-size: 16px;
-    color: #555;
-}
-
-.about-item {
-    margin-bottom: 15px; /* Space between each about item */
-}
-
-.about-item strong {
-    font-weight: bold;
-    color: #333; /* Making the label bold for emphasis */
 }
